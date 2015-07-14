@@ -1,0 +1,9 @@
+#!/bin/bash -el
+
+SOURCE_DIR=/var/lib/tsuru
+source ${SOURCE_DIR}/base/deploy
+
+if [ -x "$APP_DIR/deploy.sh" ]; then
+    echo running ./deploy.sh
+	( cd $APP_DIR ; . ./deploy.sh)
+fi
